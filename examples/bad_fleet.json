@@ -1,0 +1,12 @@
+{
+  "_note": "Known-bad fixture: each role below breaks one rule on purpose.",
+  "cadence_floor_minutes": 60,
+  "disabled_models": ["dead-provider/model-x"],
+  "roles": [
+    {"name": "oversight-review", "tier": "oversight", "model": "strong-model-1", "fallbacks": [], "cadence_minutes": 1440},
+    {"name": "operator-planner", "tier": "operator", "model": "mid-model-1", "fallbacks": ["mid-model-1"], "cadence_minutes": 120},
+    {"name": "volume-scout", "tier": "volume", "model": "dead-provider/model-x", "fallbacks": ["cheap-model-1"], "cadence_minutes": 15},
+    {"name": "risk-monitor", "tier": "no-llm", "model": "cheap-model-1", "cadence_minutes": 60},
+    {"name": "queue-worker", "tier": "wizard", "model": "free-model-1", "fallbacks": ["cheap-model-1"]}
+  ]
+}

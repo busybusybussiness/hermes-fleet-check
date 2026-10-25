@@ -1,0 +1,12 @@
+{
+  "_note": "Example fleet. Model names are illustrative tier placeholders, not a recommendation.",
+  "cadence_floor_minutes": 60,
+  "disabled_models": ["example-dead-provider/model-a"],
+  "roles": [
+    {"name": "oversight-review", "tier": "oversight", "model": "strong-model-1", "fallbacks": ["strong-model-2", "mid-model-1"], "cadence_minutes": 1440},
+    {"name": "operator-planner", "tier": "operator", "model": "mid-model-1", "fallbacks": ["mid-model-2", "cheap-model-1"], "cadence_minutes": 120},
+    {"name": "volume-scout", "tier": "volume", "model": "cheap-model-1", "fallbacks": ["free-model-1"], "cadence_minutes": 360},
+    {"name": "queue-worker", "tier": "free", "model": "free-model-1", "fallbacks": ["cheap-model-1"], "cadence_minutes": 240},
+    {"name": "risk-monitor", "tier": "no-llm", "cadence_minutes": 60}
+  ]
+}
